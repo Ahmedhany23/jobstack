@@ -13,7 +13,7 @@ import { CiMail } from "react-icons/ci";
 import { motion } from "framer-motion";
 import { animation } from "../../app/animation/animation";
 //image
-import image from "@/app/assets/categories/image.jpg";
+import image from "@/app/assets/categories/image1.jpg";
 
 //categories
 const categories = [
@@ -117,7 +117,23 @@ export default function Categories() {
       </section>
       {/* Popular Jobs */}
       <section>
-        
+        <div className="grid grid-cols-1 text-center pb-8">
+        <motion.div
+            initial={animation.hiddeny}
+            whileInView={animation.visibley}
+            viewport={{once:true}}
+            className="grid grid-cols-1 text-center pb-8"
+          >
+            <h3 className="mb-4 md:text-[25px] md:leading-normal text-2xl font-semibold">
+              Popular Categories
+            </h3>
+            <p className="text-slate-400 max-w-xl mx-auto">
+              Search all the open positions on the web. Get your own
+              personalized salary estimate. Read reviews on over 30000+
+              companies worldwide.
+            </p>
+          </motion.div>
+        </div>
       </section>
     </main>
   );
