@@ -11,7 +11,7 @@ import { FaRegCheckCircle } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
 //framer motion
 import { motion } from "framer-motion";
-import { animation } from "@/app/animation/animation";
+import { animation } from "../../app/animation/animation";
 //image
 import image from "@/app/assets/categories/image.jpg";
 
@@ -116,6 +116,9 @@ export default function Categories() {
         </div>
       </section>
       {/* Popular Jobs */}
+      <section>
+        
+      </section>
     </main>
   );
 }

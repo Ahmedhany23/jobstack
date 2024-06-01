@@ -12,7 +12,7 @@ import img2 from "@/app/assets/hero/img2.jpg";
 import img3 from "@/app/assets/hero/img3.jpg";
 import img4 from "@/app/assets/hero/img4.jpg";
 import img5 from "@/app/assets/hero/img5.jpg";
-import image from "@/app/assets/hero/image.jpg"
+import image from "../../app/assets/hero/image.jpg"
 //icons
 import { RiShoppingBagLine,RiAlarmWarningLine  } from "react-icons/ri";
 import { IoLocationOutline } from "react-icons/io5";
