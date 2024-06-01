@@ -3,17 +3,22 @@ import Link from "next/link";
 import Image from "next/image";
 //icons
 import { IoPieChartOutline } from "react-icons/io5";
-import { MdMenuBook } from "react-icons/md";
+import { MdMenuBook} from "react-icons/md";
 import { LuPieChart } from "react-icons/lu";
 import { PiPhoneCallFill } from "react-icons/pi";
-import { FaChalkboardTeacher } from "react-icons/fa";
-import { FaRegCheckCircle } from "react-icons/fa";
+import {
+  FaChalkboardTeacher,
+  FaRegCheckCircle,
+} from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
+
+
 //framer motion
 import { motion } from "framer-motion";
 import { animation } from "../../app/animation/animation";
 //image
 import image from "@/app/assets/categories/image1.jpg";
+import Job from "./job";
 
 //categories
 const categories = [
@@ -43,6 +48,8 @@ const categories = [
     jobs: 60,
   },
 ];
+//jobpost
+
 
 export default function Categories() {
   return (
@@ -53,7 +60,7 @@ export default function Categories() {
           <motion.div
             initial={animation.hiddeny}
             whileInView={animation.visibley}
-            viewport={{once:true}}
+            viewport={{ once: true }}
             className="grid grid-cols-1 text-center pb-8"
           >
             <h3 className="mb-4 md:text-[25px] md:leading-normal text-2xl font-semibold">
@@ -68,7 +75,7 @@ export default function Categories() {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{once:true}}
+            viewport={{ once: true }}
             className="grid grid-cols-1 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 mt-8 gap-[30px]"
           >
             {categories.map((c, i) => {
@@ -104,36 +111,56 @@ export default function Categories() {
             <br />
             Find the one that&apos;s right for you.
           </h3>
-          <p className="text-state-400 max-w-xl">Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 30000+ companies worldwide.</p>
+          <p className="text-state-400 max-w-xl">
+            Search all the open positions on the web. Get your own personalized
+            salary estimate. Read reviews on over 30000+ companies worldwide.
+          </p>
           <ul className="text-slate-400 mt-4">
-            <li className="mb-1 flex items-center gap-2 text-[15px] text-[#94a3b8]"><FaRegCheckCircle className=" text-emerald-600" />Digital Marketing Solutions for Tomorrow</li>
-            <li className="mb-1 flex items-center gap-2 text-[15px] text-[#94a3b8]"><FaRegCheckCircle className=" text-emerald-600" />Our Talented & Experienced Marketing Agency</li>
-            <li className="mb-1 flex items-center gap-2 text-[15px] text-[#94a3b8]"><FaRegCheckCircle className=" text-emerald-600" />Create your own skin to match your brand</li>
+            <li className="mb-1 flex items-center gap-2 text-[15px] text-[#94a3b8]">
+              <FaRegCheckCircle className=" text-emerald-600" />
+              Digital Marketing Solutions for Tomorrow
+            </li>
+            <li className="mb-1 flex items-center gap-2 text-[15px] text-[#94a3b8]">
+              <FaRegCheckCircle className=" text-emerald-600" />
+              Our Talented & Experienced Marketing Agency
+            </li>
+            <li className="mb-1 flex items-center gap-2 text-[15px] text-[#94a3b8]">
+              <FaRegCheckCircle className=" text-emerald-600" />
+              Create your own skin to match your brand
+            </li>
           </ul>
           <div className="mt-6">
-            <Link href='/contact' className="btn bg-emerald-600 hover:bg-emeraled-700 border-emerald-600 hover:border-emerald-700 text-white mt-2 rounded-md inline-flex items-center p-2 gap-2"><CiMail className="text-white"/> Contact us</Link>
+            <Link
+              href="/contact"
+              className="btn bg-emerald-600 hover:bg-emeraled-700 border-emerald-600 hover:border-emerald-700 text-white mt-2 rounded-md inline-flex items-center p-2 gap-2"
+            >
+              <CiMail className="text-white" /> Contact us
+            </Link>
           </div>
         </div>
       </section>
       {/* Popular Jobs */}
-      <section>
-        <div className="grid grid-cols-1 text-center pb-8">
-        <motion.div
-            initial={animation.hiddeny}
-            whileInView={animation.visibley}
-            viewport={{once:true}}
-            className="grid grid-cols-1 text-center pb-8"
-          >
-            <h3 className="mb-4 md:text-[25px] md:leading-normal text-2xl font-semibold">
-              Popular Categories
+      <Job/>
+      {/* Get Job */}
+      <section className="py-24 w-full table relative bg-[url('./assets/categories/getjob.jpg')] bg-cover">
+        <div className="absolute inset-0 bg-slate-900/70" />
+        <div className="container mx-auto relative">
+          <div className="grid grid-cols-1 text-center">
+            <h3 className="mb-4 md:text-[26px] text-2xl text-white font-medium">
+              Get the job that&apos;s right for you
             </h3>
-            <p className="text-slate-400 max-w-xl mx-auto">
+            <p className="text-white/80 max-w-xl mx-auto">
               Search all the open positions on the web. Get your own
               personalized salary estimate. Read reviews on over 30000+
               companies worldwide.
             </p>
-          </motion.div>
+          </div>
         </div>
+      </section>
+      <section className="container mx-auto grid md:grid-cols-3 text-center py-[70px]">
+            <div><h5 className="text-[48px] font-semibold">1,548K+</h5><p className="text-slate-400 text-[14px]">JOB FULFILLMENT</p></div>
+            <div><h5 className="text-[48px] font-semibold">25+</h5><p  className="text-slate-400 text-[14px]">BRANCHES</p></div>
+            <div><h5 className="text-[48px] font-semibold">9+</h5><p  className="text-slate-400 text-[14px]">YEARS EXPERIENCE</p></div>
       </section>
     </main>
   );
