@@ -1,4 +1,4 @@
-export const animation = {
+export const animation:any = {
     visible: { opacity: 1, x: 0 },
     left: { opacity: 0, x: -100 },
     right: { opacity: 0, x: 100 },

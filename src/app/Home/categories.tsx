@@ -3,22 +3,19 @@ import Link from "next/link";
 import Image from "next/image";
 //icons
 import { IoPieChartOutline } from "react-icons/io5";
-import { MdMenuBook} from "react-icons/md";
+import { MdMenuBook } from "react-icons/md";
 import { LuPieChart } from "react-icons/lu";
 import { PiPhoneCallFill } from "react-icons/pi";
-import {
-  FaChalkboardTeacher,
-  FaRegCheckCircle,
-} from "react-icons/fa";
+import { FaChalkboardTeacher, FaRegCheckCircle } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
-
 
 //framer motion
 import { motion } from "framer-motion";
 import { animation } from "../../app/animation/animation";
 //image
-import image from "@/app/assets/categories/image1.jpg";
+import image from "@/app/assets/Home/categories/cate.webp";
 import Job from "./job";
+import Compaines from "./companies";
 
 //categories
 const categories = [
@@ -48,8 +45,6 @@ const categories = [
     jobs: 60,
   },
 ];
-//jobpost
-
 
 export default function Categories() {
   return (
@@ -132,7 +127,7 @@ export default function Categories() {
           <div className="mt-6">
             <Link
               href="/contact"
-              className="btn bg-emerald-600 hover:bg-emeraled-700 border-emerald-600 hover:border-emerald-700 text-white mt-2 rounded-md inline-flex items-center p-2 gap-2"
+              className=" bg-emerald-600 hover:bg-emeraled-700 border-emerald-600 hover:border-emerald-700 text-white mt-2 rounded-md inline-flex items-center p-2 gap-2"
             >
               <CiMail className="text-white" /> Contact us
             </Link>
@@ -140,9 +135,9 @@ export default function Categories() {
         </div>
       </section>
       {/* Popular Jobs */}
-      <Job/>
+      <Job />
       {/* Get Job */}
-      <section className="py-24 w-full table relative bg-[url('./assets/categories/getjob.jpg')] bg-cover">
+      <section className="py-36 w-full table relative bg-[url('./assets/Home/categories/getjob.jpg')] bg-cover">
         <div className="absolute inset-0 bg-slate-900/70" />
         <div className="container mx-auto relative">
           <div className="grid grid-cols-1 text-center">
@@ -158,10 +153,21 @@ export default function Categories() {
         </div>
       </section>
       <section className="container mx-auto grid md:grid-cols-3 text-center py-[70px]">
-            <div><h5 className="text-[48px] font-semibold">1,548K+</h5><p className="text-slate-400 text-[14px]">JOB FULFILLMENT</p></div>
-            <div><h5 className="text-[48px] font-semibold">25+</h5><p  className="text-slate-400 text-[14px]">BRANCHES</p></div>
-            <div><h5 className="text-[48px] font-semibold">9+</h5><p  className="text-slate-400 text-[14px]">YEARS EXPERIENCE</p></div>
+        <div>
+          <h5 className="text-[48px] font-semibold">1,548K+</h5>
+          <p className="text-slate-400 text-[14px]">JOB FULFILLMENT</p>
+        </div>
+        <div>
+          <h5 className="text-[48px] font-semibold">25+</h5>
+          <p className="text-slate-400 text-[14px]">BRANCHES</p>
+        </div>
+        <div>
+          <h5 className="text-[48px] font-semibold">9+</h5>
+          <p className="text-slate-400 text-[14px]">YEARS EXPERIENCE</p>
+        </div>
       </section>
+      {/* Popular Compainer */}
+      <Compaines />
     </main>
   );
 }

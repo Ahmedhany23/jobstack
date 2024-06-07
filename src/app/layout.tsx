@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
+
+
 const inter = Manrope({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -8,11 +10,13 @@ export const metadata: Metadata = {
   description: "Jobstack",
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <head>

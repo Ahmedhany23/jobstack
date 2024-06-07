@@ -81,7 +81,7 @@ export default function Job() {
                       </div>
                       <div className="ms-3">
                         <Link
-                          href="/"
+                          href="/Jobs/job-apply"
                           className="block text-[16px] font-semibold hover:text-emerald-600 transition-all duration-500"
                         >
                           {job.name}
@@ -92,7 +92,7 @@ export default function Job() {
                       </div>
                     </div>
                     <Link
-                      href="/"
+                     href="/Jobs/job-apply"
                       className="items-center inline-flex text-[15px] justify-center text-center p-0 h-12 w-12 rounded-full bg-emerald-600/5 group-hover:bg-emerald-600 border border-slate-100 text-emerald-600 group-hover:text-white"
                     >
                       <MdArrowOutward />

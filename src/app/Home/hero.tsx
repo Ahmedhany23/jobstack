@@ -5,14 +5,14 @@ import Image from "next/image";
 //framer motion
 import { motion } from "framer-motion";
 //images
-import girl from "@/app/assets/hero/girlimage.webp";
-import office from "@/app/assets/hero/office.webp";
-import img1 from "@/app/assets/hero/img1.jpg";
-import img2 from "@/app/assets/hero/img2.jpg";
-import img3 from "@/app/assets/hero/img3.jpg";
-import img4 from "@/app/assets/hero/img4.jpg";
-import img5 from "@/app/assets/hero/img5.jpg";
-import image from "@/app/assets/hero/image1.jpg"
+import girl from "@/app/assets/Home/hero/girlimage.webp";
+import office from "@/app/assets/Home//hero/office.webp";
+import img1 from "@/app/assets/Home//hero/img1.jpg";
+import img2 from "@/app/assets/Home//hero/img2.jpg";
+import img3 from "@/app/assets/Home//hero/img3.jpg";
+import img4 from "@/app/assets/Home//hero/img4.jpg";
+import img5 from "@/app/assets/Home//hero/img5.jpg";
+import image from "@/app/assets/Home//hero/image1.webp"
 //icons
 import { RiShoppingBagLine,RiAlarmWarningLine  } from "react-icons/ri";
 import { IoLocationOutline } from "react-icons/io5";

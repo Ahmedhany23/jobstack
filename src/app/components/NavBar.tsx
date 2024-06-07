@@ -2,40 +2,40 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 //icons
 import { IoIosMenu, IoIosSearch, IoMdArrowDropdown } from "react-icons/io";
 
 //images
 import logo from "@/app/assets/navbar/logo.png";
 import logo2 from "@/app/assets/navbar/logo2.png";
+import logo3 from "@/app/assets/footer/logo.png"
 import image from "@/app/assets/navbar/image.webp";
+import { usePathname } from "next/navigation";
+
+
 
 //lists
 const lists = [
-  { name: "Home" },
+  { name: "Home",url:"/" },
   {
     name: "Jobs",
     arrow: <IoMdArrowDropdown />,
+    
     submenu: [
-      { name: "Job Categories" },
-      { name: "Job Vacancies" },
-      { name: "Job Post" },
-      { name: "Job Career" },
+      { name: "Job Categories" ,url:"/Jobs/job-categories" },
+      { name: "Job Apply",url:"/Jobs/job-apply", },
+      { name: "Job Career",url:"/Jobs/career" },
     ],
   },
-  { name: "About Us" },
-  { name: "Services" },
+  { name: "About Us",url:"/about" },
+  { name: "Services",url:"/services" },
   { name: "Contact", url: "/contact" },
 ];
-//submenu
-const submenu = [
-  { name: "Job Categories" },
-  { name: "Job Vacancies" },
-  { name: "Job Post" },
-  { name: "Job Career" },
-];
 
-export default function NavBar() {
+
+export default function NavBar({color}:any) {
+  const path = usePathname()
     //Menuscroll
     useEffect(() => {
         var lastScrollTop = 0;
@@ -56,31 +56,32 @@ export default function NavBar() {
   //Active
   const [index, setIndex] = useState(0);
 
-  //Active Function
-  const handleClick = (i: number) => {
-    setIndex(i);
-  };
+
 
   return (
-    <header className={` fixed duration-300 top-0 left-0 right-0 z-20 ${nav? 'shadow-lg' : ''}`}>
-      <div className="md:container mx-auto relative z-20 ">
-        <nav className=" relative min-h-[74px] flex justify-between items-center mx-auto bg-white px-2  z-20  ">
+    <header className={` fixed top-0 left-0 right-0 z-10  ${nav? 'shadow-lg bg-white' : 'lg:bg-transparent bg-white'}`}>
+      <div className="container mx-auto ">
+        <nav className={` min-h-[74px] flex justify-between items-center mx-auto  px-2  relative z-[200]  `}  >
           <div className=" inline-block ">
+            
+            <Link href='/'>
             <Image src={logo} alt="logo" className="block md:hidden h-10" />
             <Image
-              src={logo2}
+              src={color?logo2:nav?logo2:logo3}
               alt="logo"
               className="hidden md:block text-center items-center"
             />
+            </Link>
+            
           </div>
           <div className="flex gap-2 items-center">
             <ul className="lg:flex gap-5 mr-5 hidden relative">
               {lists.map((item, i) => {
                 return (
-                  <li key={i} onClick={() => handleClick(i)}>
+                  <li key={i} >
                     <div
-                      className={`flex  items-center cursor-pointer hover:text-emerald-600 duration-[200ms] ${
-                        i === index ? "text-emerald-600" : ""
+                      className={`flex  items-center cursor-pointer ${color?'':nav?'':'text-white'} hover:text-emerald-600 duration-[200ms] ${
+                        path === item.url ? "text-emerald-600" : ""
                       }`}
                       onClick={() => {
                         item.name === "Jobs"
@@ -88,7 +89,8 @@ export default function NavBar() {
                           : setSubMenu(false);
                       }}
                     >
-                      {item.name}
+                      <Link href={item.url?item.url:''}>{item.name}</Link>
+                      
                       {item.arrow}
                     </div>
                   </li>
@@ -97,16 +99,17 @@ export default function NavBar() {
 
               <ul
                 className={`font-light absolute  left-8 w-[180px] ${
-                  subMenu ? "top-[55px]" : "top-[74px] opacity-0 "
-                }  rounded-md px-[10px]  shadow-md flex flex-col duration-[400ms]`}
+                  subMenu ? "top-[45px]" : "top-[74px] opacity-0 "
+                }  rounded-md px-4  bg-white shadow-md flex flex-col duration-[400ms]`}
               >
-                {submenu?.map((sm) => {
+                {lists[1].submenu?.map((sm) => {
                   return (
                     <li
                       key={sm.name}
-                      className={`py-1 cursor-pointer hover:text-emerald-600 duration-[200ms]`}
+                      className={` cursor-pointer py-1  hover:text-emerald-600 duration-[200ms] ${path === sm.url ? "text-emerald-600" : ""}`}
                     >
-                      {sm.name}
+                      <Link href={sm.url} >{sm.name}</Link>
+                      
                     </li>
                   );
                 })}
@@ -132,19 +135,20 @@ export default function NavBar() {
               }}
             />
           </div>
+          
         </nav>
         {/* Mobile Responsive */}
         <ul
-          className={`absolute ${
-            isopen ? "top-[75px] " : "top-[-200px] opacity-0"
-          } w-full shadow-sm py-[10px] px-[20px] flex flex-col gap-4 text-[15px] font-semibold  duration-[400ms] bg-white z-0 lg:hidden `}
+          className={` absolute ${
+            isopen ? "top-[72px] " : "top-[-200px] opacity-0"
+          } w-full shadow-sm py-[10px] px-[20px] flex flex-col gap-4 text-[15px] font-semibold   duration-[400ms] bg-white lg:hidden `}
         >
           {lists.map((item, i) => {
             return (
-              <li key={i} onClick={() => handleClick(i)}>
+              <li key={i} >
                 <div
                   className={`flex justify-between items-center cursor-pointer  ${
-                    i === index ? "text-emerald-600" : ""
+                    path === item.url ? "text-emerald-600" : ""
                   }`}
                   onClick={() => {
                     item.name === "Jobs"
@@ -152,15 +156,17 @@ export default function NavBar() {
                       : setSubMenu(false);
                   }}
                 >
-                  {item.name}
+                 <Link href={item.url?item.url:''}>{item.name}</Link>
                   {item.arrow}
                 </div>
                 {subMenu && (
                   <ul className="px-5 font-light">
                     {item.submenu?.map((m, ia) => {
                       return (
-                        <li key={m.name} className={`py-1 cursor-pointer`}>
-                          {m.name}
+                        <li key={m.name} className={`py-1 cursor-pointer ${
+                          path === m.url ? "text-emerald-600" : ""
+                        }`}>
+                          <Link href={m.url} >{m.name}</Link>
                         </li>
                       );
                     })}

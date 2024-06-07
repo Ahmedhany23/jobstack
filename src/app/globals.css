@@ -2,18 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
-/* HTML: <div class="loader"></div> */
 .loader {
-    width: 120px;
-    height: 20px;
-    transform: skewX(-45deg);
-    background: 
-      linear-gradient(#f03355 0 0) left -30px top 0/30px 20px no-repeat 
-      #ccc;
-    animation: l3 1s infinite linear;
+  width: 80px;
+  aspect-ratio: 1;
+  display: grid;
+  color: #8d7958;
+  background: conic-gradient(
+        from -153deg at right,
+        #0000,
+        currentColor 1deg 126deg,
+        #0000 127deg
+      )
+      calc(50% + 5px) 0 /10px 50%,
+    conic-gradient(
+        from 27deg at left,
+        #0000,
+        currentColor 1deg 126deg,
+        #0000 127deg
+      )
+      calc(50% - 5px) 100%/10px 50%,
+    linear-gradient(to top right, currentColor 50%, #0000 0%) calc(50% + 10px)
+      calc(50% - 10px) / 20px 20px,
+    linear-gradient(to bottom left, currentColor 50%, #0000 0%) calc(50% - 10px)
+      calc(50% + 10px) / 20px 20px;
+  background-repeat: no-repeat;
+  -webkit-mask: radial-gradient(circle 5px, #0000 90%, #000);
+  animation: l6 1.5s infinite linear;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  grid-area: 1/1;
+  background: inherit;
+  transform: rotate(60deg);
+}
+.loader:after {
+  transform: rotate(120deg);
+}
+@keyframes l6 {
+  100% {
+    transform: rotate(1turn);
   }
-  
-  @keyframes l3 {
-    100% {background-position: right -30px top 0}
-  }
+}
 
+.custom-shape-divider-bottom-1717403548 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1717403548 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 107px;
+}
+
+.custom-shape-divider-bottom-1717403548 .shape-fill {
+  fill: #f8fafc;
+}
+
+/* Job apply form */
+.form-input {
+  background-color: initial;
+  border-color: inherit;
+  border-redius: 0.25rem;
+  border-width: 2px;
+  font-size: 14px;
+  height: 2.5rem;
+  outline: 1px solid #00000;
+  outline-offset: 2px;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+}
+.form-input:focus {
+  outline: none;
+}
+.btn {
+  border-width: 1px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  line-height: 28px;
+  padding: 0.25rem 1.25rem;
+  text-align: center;
+  transition-duration: 0.5s;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  vertical-align: middle;
+}
+
+.title:after {
+  display:block;
+  content: '';
+  border-bottom: solid 3px #059669;  
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+}
+.title:hover:after { transform: scaleX(1); }
+.title:after{  transform-origin:  0% 50%; }
