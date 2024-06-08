@@ -53,8 +53,6 @@ export default function NavBar({color}:any) {
   const [isopen, setIsopen] = useState(false);
   //SubMenu
   const [subMenu, setSubMenu] = useState(false);
-  //Active
-  const [index, setIndex] = useState(0);
 
 
 

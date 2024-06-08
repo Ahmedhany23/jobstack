@@ -9,7 +9,7 @@ import { CiMail, CiLocationOn } from "react-icons/ci";
 export default function Contact() {
   return (
     <>
-      <NavBar color={true} />
+     
       <div id="map">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13857.712419403022!2d-95.461367!3d29.736321000000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c16de81f3ca5%3A0xf43e0b60ae539ac9!2sGerald%20D.%20Hines%20Waterwall%20Park!5e0!3m2!1sen!2sin!4v1717548203182!5m2!1sen!2sin"
@@ -94,7 +94,7 @@ export default function Contact() {
         </div>
       </div>
       <div className="py-20 container mx-auto">
-        <div className="flex flex-col lg:flex-row  justify-center ">
+        <div className="flex flex-col lg:flex-row  justify-center gap-5 ">
           <div className="text-center px-10">
             <div className="relative text-transparent">
               <div className="size-14 bg-emerald-600/5 text-emerald-600 rounded-xl text-2xl flex align-middle justify-center items-center mx-auto shadow-sm ">
@@ -162,7 +162,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <Footer />
+ 
     </>
   );
 }
