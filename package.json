@@ -10,6 +10,7 @@
     "test": "react-scripts test --coverage"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.5",
     "@testing-library/react": "^16.0.0",
     "framer-motion": "^11.2.10",
     "next": "14.2.3",

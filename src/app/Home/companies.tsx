@@ -73,7 +73,7 @@ export default function Compaines() {
                 </div>
                 <div className="mt-4">
                   <Link
-                    href={`/company-detail/${c.id}`}
+                    href={`/`}
                     className="text-lg hover:text-emerald-600 font-semibold"
                   >
                     {c.name}

@@ -5,13 +5,13 @@ import { MdMenuBook } from "react-icons/md";
 import { LuPieChart } from "react-icons/lu";
 import { PiPhoneCallFill } from "react-icons/pi";
 import { FaChalkboardTeacher } from "react-icons/fa";
-import { MdOutlineMailOutline } from "react-icons/md";
-import { PiPencilThin } from "react-icons/pi";
+
 //
 import Image from "next/image";
 import girl from "@/app/assets/Home/hero/girlimage.webp";
 import girl2 from "@/app/assets/Home/hero/imagegirl2.jpg";
 import Collapse from "@/app/components/Collapse";
+import Explore from "@/app/components/Explore";
 const categories = [
   {
     icon: <IoPieChartOutline className="h-[1em] w-[1em]" />,
@@ -75,7 +75,7 @@ export default function Hero() {
               return (
                 <div
                   key={i}
-                  className="group px-3  py-10 rounded-md shadow hover:shadow-emerald-600/10 text-center bg-white hover:bg-emerald-600/5 transition duration-500"
+                  className="group px-3  py-10 rounded-md shadow hover:shadow-emerald-600/10 text-center bg-[#f8fafc] hover:bg-emerald-600/5 transition duration-500"
                 >
                   <div className="size-16 bg-emerald-600/5 group-hover:bg-emerald-600 text-emerald-600 group-hover:text-white rounded-md text-2xl flex align-middle justify-center items-center shadow-sm transition duration-500 mx-auto">
                     {c.icon}
@@ -142,35 +142,7 @@ export default function Hero() {
           </div>
         </div>
       </section>
-      <section className="md:mt-24  mt-16 z-10">
-        <div className=" container mx-auto xl:max-w-[1100px]">
-          <div className="grid grid-cols-1">
-            <div className="relative overflow-hidden lg:px-8 px-6 py-10 rounded-xl shadow-lg">
-              <div className="grid md:grid-cols-12  grid-cols-1 items-center gap-[30px]">
-                <div className="lg:col-span-8 md:col-span-7">
-                  <div className=" relative z-10">
-                    <h3 className="text-2xl font-semibold text-black mb-4">
-                      Explore a job now!
-                    </h3>
-                    <p className="text-slate-400 max-w-xl">
-                      Search all the open positions on the web. Get your own
-                      personalized salary estimate. Read reviews on over 30000+
-                      companies worldwide.
-                    </p>
-                  </div>
-                </div>
-                <div className="lg:col-span-4 md:col-span-5">
-                  <div className="relative z-10">
-                  <Link href="Jobs/job-apply" className="btn bg-emerald-600 hover-bg-emerald-700 border-emerald-600 text-white rounded-md">Apply Now</Link>
-                  <Link href="aboutus" className="btn bg-emerald-600/5 hover:bg-emerald-700 border-emerald-600/10 hover:border-emerald-600 hover:text-white text-emerald-600  rounded-md ms-2">Learn More</Link>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
+      <Explore />
     </main>
   );
 }

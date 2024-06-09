@@ -7,15 +7,15 @@ import { MdMenuBook } from "react-icons/md";
 import { LuPieChart } from "react-icons/lu";
 import { PiPhoneCallFill } from "react-icons/pi";
 import { FaChalkboardTeacher, FaRegCheckCircle } from "react-icons/fa";
-import { CiMail } from "react-icons/ci";
+
 
 //framer motion
 import { motion } from "framer-motion";
 import { animation } from "../../app/animation/animation";
 //image
-import image from "@/app/assets/Home/categories/cate.webp";
 import Job from "./job";
 import Compaines from "./companies";
+import ContactSection from "../components/ContactSection";
 
 //categories
 const categories = [
@@ -97,43 +97,8 @@ export default function Categories() {
           </motion.div>
         </div>
       </section>
-      {/* Contact us */}
-      <section className="py-[100px] container mx-auto flex flex-col  justify-center md:flex-row md:items-center ">
-        <Image src={image} alt="image" className="md:w-[40vw] lg:w-fit"></Image>
-        <div>
-          <h3 className="mb-6 md:text-[26px] text-2xl md:leading-normal font-semibold">
-            Millions of jobs.
-            <br />
-            Find the one that&apos;s right for you.
-          </h3>
-          <p className="text-state-400 max-w-xl">
-            Search all the open positions on the web. Get your own personalized
-            salary estimate. Read reviews on over 30000+ companies worldwide.
-          </p>
-          <ul className="text-slate-400 mt-4">
-            <li className="mb-1 flex items-center gap-2 text-[15px] text-[#94a3b8]">
-              <FaRegCheckCircle className=" text-emerald-600" />
-              Digital Marketing Solutions for Tomorrow
-            </li>
-            <li className="mb-1 flex items-center gap-2 text-[15px] text-[#94a3b8]">
-              <FaRegCheckCircle className=" text-emerald-600" />
-              Our Talented & Experienced Marketing Agency
-            </li>
-            <li className="mb-1 flex items-center gap-2 text-[15px] text-[#94a3b8]">
-              <FaRegCheckCircle className=" text-emerald-600" />
-              Create your own skin to match your brand
-            </li>
-          </ul>
-          <div className="mt-6">
-            <Link
-              href="/contact"
-              className=" bg-emerald-600 hover:bg-emeraled-700 border-emerald-600 hover:border-emerald-700 text-white mt-2 rounded-md inline-flex items-center p-2 gap-2"
-            >
-              <CiMail className="text-white" /> Contact us
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Contact Us */}
+      <ContactSection/>
       {/* Popular Jobs */}
       <Job />
       {/* Get Job */}

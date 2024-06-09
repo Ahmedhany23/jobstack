@@ -6,6 +6,12 @@ html{
   scroll-behavior:smooth;
 }
 
+@media (min-width: 1536px) {
+  .container {
+      max-width: 1280px!important;
+  }
+}
+
 .loader {
   width: 80px;
   aspect-ratio: 1;
@@ -118,3 +124,4 @@ html{
 }
 .title:hover:after { transform: scaleX(1); }
 .title:after{  transform-origin:  0% 50%; }
+
